@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thread View Count Feature</title>
+</head>
+<body>
+
+  <h2>Thread: My First Post</h2>
+  <p>Views: <span id="viewCount">0</span></p>
+
+  <script>
+    let views = localStorage.getItem("threadViews");
+
+    if (views === null) {
+      views = 1;
+    } else {
+      views = parseInt(views) + 1;
+    }
+
+    localStorage.setItem("threadViews", views);
+    document.getElementById("viewCount").innerText = views;
+  </script>
+
+</body>
+</html>
